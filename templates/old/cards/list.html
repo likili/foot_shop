@@ -1,0 +1,66 @@
+{% block main_content %}
+  {#{% include "inc_sticky.html" %}#}
+  <div class="row">
+{#    <a href="{% url 'students:add' %}">Добавить нового студента</a>#}
+    <div class="col-md-12">
+      {% if cards %}
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>№</th>
+            <th>Модель</th>
+            <th>Описание</th>
+            <th>Фото</th>
+            <th>ссылки</th>
+            {# name email package  #}
+          </tr>
+          </thead>
+          <tbody>
+          {% for card in cards %}
+            <tr>
+              <td>
+                {{ forloop.counter }}
+              </td>
+              <td>
+                {# передаем id товара в get с помощью: url 'cards:detail' card.id #}
+                <a href="{% url 'cards:detail' card.id %}">{{ card.name }}</a>
+              </td>
+              <td>{{ card.surname }}</td>
+              <td>
+                <img src="{{ card.photo.url }}" alt="{{ card.name }}">
+                {% comment %}
+                {% for course in student.courses.all %}
+                  <p><a href="{# {% url 'courses:detail' course.id %} #}">{{ course.name }}</a></p>
+                {% endfor %}
+                {% endcomment %}
+              </td>
+              <td>
+{#                <a href="{% url 'students:edit' student.id %}" class="btn-primary" role="button">#}
+                  <span class="glyphicon glyphicon-pencil"></span>
+                  Изменить
+                </a>
+              </td>
+              <td>
+{#                <a href="{% url 'students:remove' student.id %}" class="btn-primary" role="button">#}
+                  <span class="glyphicon glyphicon-pencil"></span>
+                  Удалить
+                </a>
+              </td>
+            </tr>
+{#            <input type='submit' name='example' action="{% url 'cards:list' %}" method="post"/>#}
+            <form action="" method="post">
+            {% csrf_token %}
+              <input type="hidden" name="cardsID" value="{{ card.id }}"/>
+              <input type="submit" value="В карзину"/>
+
+            </form>
+
+          {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+        Нет не одного товара
+      {% endif %}
+    </div>
+  </div>
+{% endblock main_content %}

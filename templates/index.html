@@ -1,0 +1,125 @@
+{% extends "nav_bar.html" %}
+{% load staticfiles %}
+{% load my_tags %}
+
+
+{% block nav_class_index %}active{% endblock %}
+
+
+
+{% block main_content %}
+  <aside id="colorlib-hero">
+    <div class="flexslider">
+      <ul class="slides">
+        {% for baner in baners %}
+            <li style="background-image: url({{ baner.photo.url }});">
+        <div class="overlay"></div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-6 offset-sm-3 text-center slider-text">
+              <div class="slider-text-inner">
+                <div class="desc">
+
+                  <h1 class="head-1">{{ baner.head_1 }}</h1>
+                  <h2 class="head-2">{{ baner.head_2 }}</h2>
+                  <h2 class="head-3">{{ baner.head_3 }}</h2>
+                  <p class="category"><span>{{ baner.category }}</span></p>
+                  <p><a href="#" class="btn btn-primary">Shop Collection</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </aside>
+  <div class="colorlib-intro">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <h2 class="intro">It started with a simple idea: Create quality, well-designed products that I wanted
+            myself.</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="colorlib-product">
+    <div class="container-fluid">
+      <div class="row">
+        {% if cat_indexes %}
+        {% for cat_index in cat_indexes %}
+          <div class="col-sm-6 text-center">
+            <div class="featured">
+              <a href="#" class="featured-img" style="background-image: url({{ cat_index.photo.url }});"></a>
+              <div class="desc">
+                <h2><a href="#">{{ cat_index.indexsurname }}</a></h2>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="colorlib-product">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 offset-sm-2 text-center colorlib-heading">
+          <h2>Best Sellers</h2>
+        </div>
+      </div>
+
+      <div class="row row-pb-md">
+        {% for best_sale in best_sales %}
+          {#        {{ forloop.counter }}#}
+          <div class="col-lg-3 mb-4 text-center">
+            <div class="product-entry border">
+              <a href="#" class="prod-img">
+                <img src="{{ best_sale.photo.url }}" class="img-fluid" alt="{{ best_sale.name }}">
+              </a>
+              <div class="desc">
+                <h2><a href="#">{{ best_sale.name }}</a></h2>
+                <span class="price">${{ best_sale.price }}.00</span>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+
+        <!--
+
+          <div class="w-100"></div>
+
+          -->
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p><a href="#" class="btn btn-primary btn-lg">Shop All Products</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="colorlib-partner">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 offset-sm-2 text-center colorlib-heading colorlib-heading-sm">
+          <h2>Trusted Partners</h2>
+        </div>
+      </div>
+      <div class="row">
+        {% if trasted_partners %}
+          {% for trasted_partner in trasted_partners %}
+            <div class="col partner-col text-center">
+              <img src="{{ trasted_partner.photo.url }}" class="img-fluid" alt="{{ trasted_partner.name }}">
+            </div>
+          {% endfor %}
+        {% endif %}
+
+
+      </div>
+    </div>
+  </div>
+{% endblock main_content %}
