@@ -1,0 +1,17 @@
+concept.txt
+get_pip.py
+req.txt
+.idea
+venv
+chat_room
+food-shop-vue
+local_settings.py
+prod_settings.py
+settings.py
+__pycache__/
+*/__pycache__/
+*.py[cod]
+.pyc
+*.log
+_cook.py
+media/

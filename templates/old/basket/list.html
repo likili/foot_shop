@@ -1,0 +1,73 @@
+{% block main_content %}
+  {#{% include "inc_sticky.html" %}#}
+  <div class="row">
+    {#    <a href="{% url 'students:add' %}">Добавить нового студента</a>#}
+    <div class="col-md-12">
+      {% if cards %}
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>№</th>
+            <th>Модель</th>
+            <th>Описание</th>
+            <th>Фото</th>
+            <th>ссылки</th>
+            {# name email package  #}
+          </tr>
+          </thead>
+          <tbody>
+          {{ cards }}
+          {% for k, v in cards.items %}
+            {% if k != "orderid" %}
+              {#              {% for ki, vi in v.items %}#}
+              {#                  <p>{{ ki }}:{{ vi }}</p>#}
+
+
+              <tr>
+                <td>
+                  {{ forloop.counter }}
+                </td>
+                <td>
+                  {# передаем id товара в get с помощью: url 'cards:detail' card.id #}
+                  <a href="{% url 'cards:detail' v.id %}">{{ v.name }}</a>
+                </td>
+                <td>{{ v.id }}</td>
+                <td>
+                  <img src="{{ v.photo }}" alt="{{ v.name }}">
+                  <p><a href="{# {% url 'courses:detail' course.id %} #}">{{ v.name }}</a></p>
+                </td>
+                <td>
+                  {#                <a href="{% url 'students:edit' student.id %}" class="btn-primary" role="button">#}
+                  <span class="glyphicon glyphicon-pencil"></span>
+                  Изменить
+                  </a>
+                </td>
+                <td>
+                  <a href="{% url 'basket:order_rem' k %}" class="btn-primary" role="button">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                    Удалить
+                  </a>
+                </td>
+              </tr>
+              {#            {% endfor %}#}
+            {% endif %}
+            {#            <p>{{ k }}:{{ v }}</p>#}
+
+          {% endfor %}
+
+          {#            <input type='submit' name='example' action="{% url 'cards:list' %}" method="post"/>#}
+
+          </tbody>
+        </table>
+        <form action="{% url "basket:order_save" %}" method="post">
+          {% csrf_token %}
+          <input type="hidden" name="cardsID" value="{{ cards.orderid }}"/>
+          <input type="submit" value="Заказать"/>
+
+        </form>
+      {% else %}
+        Нет не одного товара
+      {% endif %}
+    </div>
+  </div>
+{% endblock main_content %}

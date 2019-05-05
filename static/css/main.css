@@ -1,0 +1,611 @@
+/*  TODO: спецификация элементов */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    /*font-family: 'Open Sans', sans-serif;*/
+}
+
+ul, li {
+    display: block;
+    margin: 0px;
+    padding: 0px;
+}
+
+img {
+    /*display: block;*/
+}
+h1 {
+    font-weight: 700;
+    color: white;
+}
+h1, h2, h3 {
+    text-align: center;
+}
+h2, h3, h4{
+    font-weight: 400;
+}
+h2, h5 {
+    color: #828281;
+}
+h3 {
+    color: #207b20;
+}
+h4 {
+    color: #dddddd;
+}
+h5 {
+    font-size: 18pt;
+    font-weight: 700;
+}
+
+hr {
+    border: none; /* Убираем границу */
+    width: 45px;
+    height: 2px; /* Толщина линии */
+    background: #828281;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.title {
+    padding-top: 38px;
+    text-align: center;
+}
+
+.title__main {
+    font-size: 21pt;
+    padding-bottom: 10px;
+    margin: 0 auto;
+}
+
+.title__text {
+    width: 580px;
+    margin: 0 auto;
+    font-size: 12pt;
+    padding-top: 10px;
+    padding-bottom: 50px;
+}
+
+.btn-offer__clik, .btn-scroll__click, .what-we-btn__click, .btn-latest__clik {
+    border-radius: 30px;
+}
+
+
+.what-we__img{
+    width: 140px;
+    height: 140px;
+}
+
+/* TODO: СПЕЦИФИКАЦИЯ ЦВЕТОВ */
+/* ФОНЫ */
+.dark-green-back {
+    background: #207d20;
+}
+/*цвет фона кнопок*/
+.green {
+    background: #54d154;
+}
+
+.gray-back {
+    background: #f2f1f1;
+}
+
+.gray-back-dark {
+    background: #dddcdc;
+}
+
+/* ШРИФТЫ */
+.dark-green {
+    color: #207d20;
+}
+.gray {
+    color: #828281;
+}
+
+
+
+
+/*
+.example-element {
+    background-color: blueviolet;
+    height: 300px;
+    width: 300px;
+    border: 15px solid blue;
+    padding: 15px;
+    margin: 25px;
+}
+*/
+
+/* TODO: Первый экран */
+header {
+    color: white;
+}
+
+header .container-fluid {
+    /*background-color: #c4a680;*/
+    background-image: url("/img/background.png");
+    /*display: block; - указываем для изображений*/
+    background-size: cover;
+}
+.backgrounded {
+    display: block;
+}
+
+.menu, .search {
+    margin-top: -20px;
+}
+
+.menu__item {
+    padding-top: 5px;
+    margin: 0 11px;
+}
+
+.menu__item a {
+
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+}
+/* Цвет ссылки при наведении на нее курсора мыши */
+.menu__item a:hover {
+    font-weight: 700;
+    text-decoration-line: none;
+}
+/* Цвет посещённой ссылки */
+.menu__item a:visited {
+    font-weight: 700;
+    text-decoration-line: none;
+}
+.search {
+    outline: none;
+    padding-top: 5px;
+}
+
+.search__input {
+    padding: 12px 0;
+    padding-left: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+
+}
+
+.search__btn {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.offer {
+    padding-top: 250px;
+}
+
+.offer__title {
+    font-size: 52pt;
+}
+
+.btn-offer {
+    padding-top: 20px;
+    padding-bottom: 215px;
+}
+
+.btn-offer__clik {
+    width: 215px;
+    /*background-color: #54d154;*/
+    color: white;
+}
+
+.btn-scroll__click {
+    width: 120px;
+    background-color: #fff;
+    color: black;
+    opacity: 0.7;
+    font-size: 10pt;
+}
+
+.btn-scroll__click:hover {
+    opacity: 0.9;
+}
+
+.btn-scroll {
+    padding-bottom: 12px;
+}
+/* TODO: Второй экран */
+.what-we {
+    /*max-width: 250px;*/
+    text-align: center;
+    /*margin: 50px;*/
+}
+
+
+
+.what-we__block {
+    font-size: 14px;
+    color: #828181;
+}
+
+.what-we-btn {
+    padding-bottom: 70px;
+}
+.what-we-btn__click {
+    color: white;
+    width: 120px;
+    height: 30px;
+    padding: 2px;
+    font-weight: 700;
+}
+
+/* Третий экран */
+.what-we {
+    /*max-width: 250px;*/
+    text-align: center;
+    /*margin: 50px;*/
+}
+
+/* кнопки */
+.lts-wrk-btn-grp {
+    padding-bottom: 57px;
+}
+
+.lts-wrk-btn {
+    border-radius: 30px;
+    background: white;
+    color: #54d154;
+    border-color: #2d9d2d;
+}
+
+.lts-wrk-btn:hover {
+    background: #2d9d2d;
+    color: white;
+}
+
+.lts-wrk-btn:active {
+    background: #2d9d2d;
+    color: white;
+}
+.latest-work {
+    text-align: center;
+}
+
+/* фотогалерея */
+.my_catalog {
+    max-width: 980px;
+
+}
+
+.my_catalog div {
+    display: block;
+    float: left;
+    width: 160px; /*16.0658105939%;*/
+    margin: 15px; /*1.601284109%;*/
+    overflow: hidden;
+
+}
+/* кнопка в конце формы */
+.btn-latest {
+    padding-top: 50px;
+    padding-bottom: 58px;
+}
+
+.btn-latest__clik {
+    width: 215px;
+    /*background-color: #54d154;*/
+    color: white;
+}
+
+/* TODO: ТРЕТИЙ ЭКРАН */
+.car-row {
+    padding-bottom: 70px;
+}
+
+.carusel-client {
+    padding-top: 16px;
+}
+
+.carusel__text {
+    max-width: 500px;
+    text-align: center;
+}
+
+.carusel-client__img {
+    display: block;
+    width: 47px;
+    height: 47px;
+    /*border-radius: 100px;*/
+    /*border-color: red;*/
+    /*border-width: 2px;*/
+    margin-right: 9px;
+
+}
+.carusel-client__title {
+    margin: 0 auto;
+    padding-top: 3px;
+}
+
+.fa-angle-left, .fa-angle-right {
+    font-size: 40px;
+}
+
+
+
+/* TODO: ЧЕТВЕРТЫЙ ЭКРАН    */
+.client-logo {
+    /*max-width: 250px;*/
+    text-align: center;
+    /*margin: 50px;*/
+    max-width: 800px;
+    padding-bottom: 64px;
+}
+
+.client-logo div {
+    display: block;
+    float: left;
+    width: 160px; /*16.0658105939%;*/
+    margin: 15px; /*1.601284109%;*/
+    overflow: hidden;
+
+}
+.client-logo__img {
+    width: 140px;
+    height: 140px;
+}
+
+.btn-work {
+    padding-bottom: 60px;
+}
+
+/* TODO: ПЯТЫЙ ЭКРАН */
+
+.meet-team-img {
+    display: block;
+    clip-path: circle(50px at center 50px);
+    background-color: #fff;
+    /*background-clip: border-box;*/
+    -webkit-background-clip: content-box;
+    padding-bottom: 5px;
+
+}
+
+.img-my {
+    padding-bottom: 60px;
+}
+.img-my__block {
+    float: left;
+}
+
+.img-my hr {
+    border: 0; /* Убираем границу */
+    width: 2px;
+    height: 65px; /* Толщина линии */
+
+    padding: 0;
+    margin: 0 auto;
+}
+
+.img-my p {
+    font-size: 12px;
+    text-align: center;
+    color: white;
+    margin: 0;
+    padding-bottom: 8px;
+}
+
+.img-my__cont {
+
+    width: 84px;
+    height: 28px;
+    background: white;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.team-btn {
+    background: #3eba3e;
+    width: 90px;
+}
+
+.team-btn .btn-work {
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+}
+
+/* TODO: FOOTER*/
+
+.footer {
+    background: #333;
+    color: #ddd;
+}
+.footer hr {
+    border: 0; /* Убираем границу */
+    width: 42px;
+    height: 2px; /* Толщина линии */
+    padding: 0;
+    margin: 0 auto;
+    background: #ddd;
+}
+
+.footer__title {
+    font-size: 16px;
+    margin: 0;
+}
+.footer__text {
+    padding-top: 15px;
+    font-size: 12px;
+    text-indent: 1.5em;
+}
+
+.footer__block {
+    text-align: center;
+    max-width: 324px;
+    padding-top: 30px;
+}
+
+.footer-post {
+    margin-top: 20px;
+}
+
+.footer-post__block {
+    font-size: 12px;
+    text-align: left;
+}
+
+
+.footer-post__img {
+    display: block;
+    width: 47px;
+    height: 47px;
+    margin-right: 9px;
+
+}
+.footer-post__title {
+    margin: 0 auto;
+    padding-top: 3px;
+}
+
+.footer-post__clrmg {
+
+    text-align: left;
+    height: 16px;
+    width: 80px;
+    /*background: #54d154;*/
+}
+.footer-post__clrmg button {
+    text-align: center;
+    background: #54d154;
+}
+
+.footer-post__ui {
+    text-align: center;
+    height: 16px;
+    width: 74px;
+}
+
+.footer-post__ui button {
+    text-align: center;
+    background: #ffba00;
+}
+
+.footer-post__ft {
+
+    text-align: center;
+    height: 16px;
+    width: 110px;
+}
+
+.footer-post__ft button {
+    background: #089dea;
+}
+
+.footer-post__bk {
+    height: 16px;
+    width: 50px;
+}
+
+.footer-post__bk button {
+    text-align: center;
+    background: #f34d04;
+}
+
+.footer-post .btn {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /*background: #54d154;*/
+    color: white;
+    font-size: 12px;
+}
+
+/* Контакты */
+
+
+.ftr-cnt__title {
+    font-size: 16px;
+    margin: 0;
+}
+.ftr-cnt__text {
+    padding-top: 15px;
+    padding-bottom: 20px;
+    font-size: 12px;
+    text-indent: 1.5em;
+}
+
+.ftr-cnt__block {
+    text-align: center;
+    max-width: 324px;
+    padding-top: 30px;
+}
+
+.ftr-frm form {
+    border-top-left-radius: 10px;
+	border-top-right-radius: 200px;
+}
+
+.ftr-frm .form-group {
+    margin-bottom: 3px;
+    border: 0;
+}
+
+
+.ftr-frm input,.ftr-frm textarea {
+    background: #444444;
+    border: 0;
+    border-radius: unset;
+    resize: none;
+    width: 253px;
+}
+
+
+.ftr-frm button {
+    border-radius: 0;
+    background: #2d9d2d;
+    width: 253px;
+    border: 0;
+}
+
+.ftr-end {
+    height: 35px;
+}
+
+/* TODO: медиа запрос (адаптивность) */
+/*в диапозовне от нуля до 992px применяться данные классы*/
+@media screen and (max-width: 992px){
+    .logo {
+        display: block;
+        margin: 0 auto;
+    }
+    .menu, .search {
+        padding: 25px;
+    }
+    .search {
+        width: 245px;
+    }
+
+    .offer {
+        padding-top: 120px;
+    }
+
+    .offer__title {
+        font-size: 32pt;
+    }
+
+    .btn-offer {
+        padding-top: 16px;
+        padding-bottom: 120px;
+    }
+
+    .what-we-btn {
+        padding-bottom: 20px;
+    }
+
+}
+
+
+
+@media screen and (max-width: 576px){
+    .menu {
+        flex-direction: column;
+        padding-left: 0;
+    }
+    .search {
+        margin: 0 auto;
+        padding: 0;
+    }
+}

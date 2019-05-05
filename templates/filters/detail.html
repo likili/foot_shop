@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+
+{% load staticfiles %}
+
+{% block title %} Hello, Students! {% endblock title %}
+
+
+{% block nav_class_students %}active{% endblock %}
+
+
+{% block main_content %}
+{% include "inc_sticky.html" %}
+    <div class="row">
+      <div class="">
+      {% if object %}
+            <table class="table table-dark">
+              <tbody>
+          <tr>
+            <td>Имя</td>
+            <td>{{ object.name }}</td>
+          </tr>
+          <tr>
+            <td>Фамилие</td>
+            <td>{{ object.surname }}</td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td>{{ object.email }}</td>
+          </tr>
+          <tr>
+            <td>Дата рождения</td>
+            <td>{{ object.date_of_birth }}</td>
+          </tr>
+          <tr>
+            <td>Адрес</td>
+            <td>{{ object.address }}</td>
+          </tr>
+          <tr>
+            <td>Логин skype</td>
+            <td>{{ object.login_skype }}</td>
+          </tr>
+          <tr>
+            <td>Телефон</td>
+            <td>{{ object.telephone }}</td>
+          </tr>
+          <tr>
+            <td>Курс</td>
+            <td>{{ object.courses }}</td>
+          </tr>
+              </tbody></table>
+      {% else %}
+          Нет не одного студента
+      {% endif %}
+      </div>
+    </div>
+
+{% endblock main_content %}
