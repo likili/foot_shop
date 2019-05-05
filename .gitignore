@@ -15,3 +15,5 @@ __pycache__/
 *.log
 _cook.py
 media/
+status.txt
+.sass-cache/
